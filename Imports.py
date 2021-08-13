@@ -72,3 +72,12 @@ print("\n\n... IMPORTS COMPLETE ...\n")
     
 print("\n... SEEDING FOR DETERMINISTIC BEHAVIOUR ...\n")
 seed_it_all()
+
+# For reference later
+EV2_NAME = "efficientnetv2-b2"
+    
+# EfficientNet Module Imports
+import brain_automl
+from brain_automl import efficientnetv2
+from efficientnetv2 import effnetv2_model
+from efficientnetv2 import effnetv2_configs

@@ -47,3 +47,7 @@ for epoch in range(EPOCHS):
         break
 
     print(f'Epoch {epoch} Loss {round(total_loss.numpy() / TRAIN_STEPS, 3)}, time: {int(time.time() - t_start)} sec\n')
+   
+
+STATS.plot_stat('train_loss')
+STATS.plot_stat('train_acc')

@@ -1,3 +1,6 @@
+import tensorflow as tf
+import matplotlib.pyplot as plt
+
 # converts a dense to a sparse tensor
 # sparse tensors are required to compute the Levenshtein distance
 def dense_to_sparse(dense):

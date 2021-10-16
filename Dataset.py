@@ -1,3 +1,8 @@
+import tensorflow as tf
+from time import time
+import matplotlib.pyplot as plt
+import numpy
+
 # decodes TFRecord
 def decode_tfrecord(record_bytes):
     features = tf.io.parse_single_example(record_bytes, {

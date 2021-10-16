@@ -1,3 +1,5 @@
+import matlplotlib.pyplot as plt
+
 # convert the integer encoded predictions to a string
 def int2char(i_str):
     res = ''

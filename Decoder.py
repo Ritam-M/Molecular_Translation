@@ -1,3 +1,5 @@
+import tensorflow as tf
+
 class Decoder(tf.keras.Model):
     def __init__(self, vocab_size, attention_units, encoder_dim, decoder_dim, char_embedding_dim):
         super(Decoder, self).__init__()
@@ -48,9 +50,9 @@ class Decoder(tf.keras.Model):
         c = self.init_c(mean_encoder_out, training=training)
         return h, c
       
-with tf.device('/CPU:0'):
-    decoder = Decoder(VOCAB_SIZE, ATTENTION_UNITS, ENCODER_DIM, DECODER_DIM, CHAR_EMBEDDING_DIM)
-    h, c = decoder.init_hidden_state(encoder_res[:BATCH_SIZE_DEBUG], training=False)
-    preds, h, c = decoder(lbls[:BATCH_SIZE_DEBUG, :1], h, c, encoder_res, debug=True)
+# with tf.device('/CPU:0'):
+#    decoder = Decoder(VOCAB_SIZE, ATTENTION_UNITS, ENCODER_DIM, DECODER_DIM, CHAR_EMBEDDING_DIM)
+#    h, c = decoder.init_hidden_state(encoder_res[:BATCH_SIZE_DEBUG], training=False)
+#    preds, h, c = decoder(lbls[:BATCH_SIZE_DEBUG, :1], h, c, encoder_res, debug=True)
 
-print ('Decoder output shape: (batch_size, vocab size) {}'.format(preds.shape))
+# print ('Decoder output shape: (batch_size, vocab size) {}'.format(preds.shape))

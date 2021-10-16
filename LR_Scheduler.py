@@ -21,6 +21,7 @@ def plot_lr_schedule(lr_schedule, name):
     plt.show()
 
 # Training configuration
+'''
 EPOCHS = 32
 WARMUP_STEPS = 500
 TRAIN_STEPS = 1000
@@ -31,3 +32,4 @@ TOTAL_STEPS = EPOCHS * TRAIN_STEPS
 # Learning rate for encoder
 LR_SCHEDULE = [lrfn(step, 1e-8, 2e-3, 1e-4 ,EPOCHS) for step in range(TOTAL_STEPS)]
 plot_lr_schedule(LR_SCHEDULE, 'Ecnoder')
+'''

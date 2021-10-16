@@ -1,3 +1,5 @@
+import matlplotlib.pyplot as plt
+
 def get_val_dataset(bs=BATCH_SIZE):
     FNAMES_TRAIN_TFRECORDS = tf.io.gfile.glob(f'{GCS_DS_PATH}/val/*.tfrecords')
     val_dataset = tf.data.TFRecordDataset(FNAMES_TRAIN_TFRECORDS, num_parallel_reads=AUTO)
@@ -8,7 +10,7 @@ def get_val_dataset(bs=BATCH_SIZE):
     val_dataset = val_dataset.prefetch(1)
     
     return val_dataset
-
+'''
 val_dataset = get_val_dataset()
 benchmark_dataset(val_dataset)
 
@@ -20,3 +22,4 @@ print('val img 0 mean: %.3f, 0 std: %.3f, min: %.3f, max: %.3f, %s' % train_batc
 
 show_batch(val_dataset)
 
+'''

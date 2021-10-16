@@ -1,3 +1,5 @@
+import tensorflow as tf
+
 class Encoder(tf.keras.Model):
     def __init__(self):
         super(Encoder, self).__init__()
@@ -23,8 +25,8 @@ class Encoder(tf.keras.Model):
         return x
     
 # Example enoder output
-with tf.device('/CPU:0'):
-    encoder = Encoder()
-    encoder_res = encoder(imgs[:BATCH_SIZE_DEBUG], debug=True)
+# with tf.device('/CPU:0'):
+#    encoder = Encoder()
+#    encoder_res = encoder(imgs[:BATCH_SIZE_DEBUG], debug=True)
 
-print ('Encoder output shape: (batch size, sequence length, units) {}'.format(encoder_res.shape))
+# print ('Encoder output shape: (batch size, sequence length, units) {}'.format(encoder_res.shape))

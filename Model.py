@@ -1,3 +1,5 @@
+import tensorflow as tf
+
 # The start/end/pad tokens will be removed from the string when computing the Levenshtein distance
 START_TOKEN = tf.constant(vocabulary_to_int.get('<start>'), dtype=tf.int64)
 END_TOKEN = tf.constant(vocabulary_to_int.get('<end>'), dtype=tf.int64)

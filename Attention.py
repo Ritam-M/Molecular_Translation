@@ -1,3 +1,5 @@
+import tensorflow as tf
+
 class BahdanauAttention(tf.keras.layers.Layer):
     def __init__(self, units):
         super(BahdanauAttention, self).__init__()
@@ -56,9 +58,10 @@ class BahdanauAttention(tf.keras.layers.Layer):
         context_vector = tf.reduce_sum(context_vector, axis=1)
         
         return context_vector
-with tf.device('/CPU:0'):
-    attention_layer = BahdanauAttention(ATTENTION_UNITS)
-    context_vector, attention_weights = attention_layer(tf.zeros([BATCH_SIZE_DEBUG, DECODER_DIM]), encoder_res, debug=True)
+    
+# with tf.device('/CPU:0'):
+#    attention_layer = BahdanauAttention(ATTENTION_UNITS)
+#    context_vector, attention_weights = attention_layer(tf.zeros([BATCH_SIZE_DEBUG, DECODER_DIM]), encoder_res, debug=True)
 
-print('context_vector shape: (batch size, units) {}'.format(context_vector.shape))
-print('attention_weights shape: (batch_size, sequence_length, 1) {}'.format(attention_weights.shape))
+# print('context_vector shape: (batch size, units) {}'.format(context_vector.shape))
+# print('attention_weights shape: (batch_size, sequence_length, 1) {}'.format(attention_weights.shape))
